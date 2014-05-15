@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello seajs</title>
+    <meta charset="utf-8">
+    <meta name="author" content="J.Soon">
+</head>
+
+<body>
+    <div id="hello"></div>
+
+    <script src="../LIB/seajs/2.2.1/sea.js" id="seajsnode"></script>
+    <script type="text/javascript">
+        // Set configuration
+        seajs.config({
+            base: "../LIB/",
+            alias: {
+                "jquery": "jquery/1.10.2/jquery.js"
+            }
+        });
+        // Import main portal
+        seajs.use("../JS/main");
+    </script>
+</body>
+</html>
