@@ -1,0 +1,16 @@
+{
+    "family": "seaJS",
+    "name": "helloSeaJS",
+    "version": "1.0.1",
+    "author": "J.Soon",
+    "description": "此为 spm 打包管理工具配置文件。include: relative 表示只对相对路径进行合并；alias: 这里的 alias 和 html 中的 alias 结构相同，但是互不相干，这里只作用于 .js 文件；output 用于指定压缩输出文件",
+    "spm": {
+        "include": "relative",
+        "alias": {
+            "$": "jquery/jquery/1.10.1/jquery",
+            "$-debug": "jquery/jquery/1.10.1/jquery-debug",
+            "calendar": "arale/calendar/1.0.0/calendar"
+        },
+        "output": ["main.js"]
+     }
+}

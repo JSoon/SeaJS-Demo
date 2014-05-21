@@ -8,18 +8,37 @@
 
 <body>
     <div id="hello"></div>
+    <input type="text" id="calendar" placeholder="选择日期" readonly>
 
-    <script src="../LIB/seajs/2.2.1/sea.js" id="seajsnode"></script>
+    <script src="../sea-modules/seajs/seajs/2.2.1/sea.js" id="seajsnode"></script>
+    <script src="../sea-modules/seajs/seajs-style/1.0.2/seajs-style.js"></script>
     <script type="text/javascript">
         // Set configuration
         seajs.config({
-            base: "../LIB/",
+            // 编码
+            charset: "utf-8",
+            // 基础路径
+            base: "../sea-modules/",
+            // 别名，省略 .js 后缀
             alias: {
-                "jquery": "jquery/1.10.2/jquery.js"
+                "$": "jquery/jquery/1.10.1/jquery",
+                "$-debug": "jquery/jquery/1.10.1/jquery-debug", // 便于 debug 模式下引用
+                "calendar": "arale/calendar/1.0.0/calendar"
             }
         });
-        // Import main portal
-        seajs.use("../JS/main");
+
+        // For development
+        if (location.href.indexOf("?dev") > 0) {
+            seajs.use("../src/main", function() {
+                console.log("use completed !");
+            });
+        }
+        // For production
+        else {
+            seajs.use("seaJS/helloSeaJS/1.0.1/main-debug", function() {
+                console.log("use completed !");
+            });
+        }
     </script>
 </body>
 </html>
